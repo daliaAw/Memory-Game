@@ -46,7 +46,8 @@ Game Over Screen: This appears when the player runs out of lives or fails to mat
 
 
 
-Link to Game
+Link to Game:
+https://daliaaw.github.io/Memory-Game/
 
 
 Next Step:

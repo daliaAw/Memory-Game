@@ -1,4 +1,4 @@
-Description:
+Game Description - Memory Game
 This is a simple memory card game built using HTML, CSS, and JavaScript. The game presents players with a grid of cards, each containing an image. The objective is to match pairs of cards by flipping them over two at a time. If two flipped cards match, they remain face-up; otherwise, they are flipped back over. The game continues until all pairs are matched or the player exhausts their lives by making incorrect matches.
 
 Files:

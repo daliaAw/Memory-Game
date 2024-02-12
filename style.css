@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Comic Neue', cursive;
+    background: url(./images/BG.jpg);
+    background-position: center;
+    background-repeat: no-repeat;  
+    background-size: cover;
+}
+h1{
+    margin-top: 3rem;
+    text-transform: uppercase;
+}
+#moves{
+    margin: 2rem 0 1rem 0;
+    font-size: 25px;
+}
+#moves span{
+    font-weight: bold;
+    font-size: larger;
+}
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(4, 8rem);
+    gap: 1rem;
+    perspective: 800px; 
+    padding: 1rem 0px;
+}
+.card {
+    border: 0.2rem solid rgb(142, 136, 140); 
+    transform-style: preserve-3d ; 
+    position: relative;
+    transition: all 2s ease;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0.4rem 1rem;
+    cursor: pointer;    
+    border-radius: 1rem;
+}
+.card.flipped {
+    transform: rotateY(180deg);
+}
+.card::before, .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.face,
+.back{
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none; 
+}
+.face{
+    background-position: center;
+    background-repeat: no-repeat;  
+    background-size: cover;
+    transform: rotateY(-180deg);
+}
+.back{
+    background: url(./images/Q.jpg);
+    background-position: center;
+    background-repeat: no-repeat;  
+    background-size: cover;
+    backface-visibility: hidden;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: none; 
+}
+.lose {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(31, 29, 29, 0.8); 
+    color: white;
+    padding: 2.3rem;
+    border-radius: 0.3rem;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+}
+.win{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(236, 233, 80, 0.8); 
+    color: white;
+    padding: 2.3rem;
+    border-radius: 0.3rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.shake {
+    animation: shake 0.5s ease;
+}  
+  @keyframes shake {
+    0%   { transform: rotate(0deg);}
+    25%  { transform: rotate(-5deg);}
+    50%  { transform: rotate(5deg);}
+    75%  { transform: rotate(-5deg);}
+    100% { transform: rotate(0deg);}
+}
+.shakeLose{
+    animation: shake-lose 0.5s ease;
+}
+.reset{
+    padding: 1rem 1.5rem;
+    margin-top: 1.2rem;
+    color: pink;
+    background: white;
+    font-size: 1.3rem;
+    letter-spacing:0.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border: 3px solid rgb(142, 136, 140); 
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0.4rem 1rem;
+}
+.reset:focus{
+    color: white;
+    background-color: palevioletred;
+}
+@keyframes shake-lose {
+    0%   { transform: translateX(0);}
+    20%  { transform: translateX(-10px);}
+    40%  { transform: translateX(10px);}
+    60%  { transform: translateX(-10px);}
+    80%  { transform: translateX(10px);}
+    100% { transform: translateX(0);}
+}
+@media screen and (max-width: 768px){
+ 
+    h1{
+        font-size: 1.5rem;
+    }
+    #game-board {
+        grid-template-columns: repeat(4, 7rem);
+        grid-template-rows: repeat(4, 7rem);
+    }
+    #moves{
+        margin: 1.2rem 0 .8rem 0;
+        font-size: 1.2rem;
+    } 
+    .reset{
+        padding: 1rem 1.2rem;
+        margin-top: 1rem;
+        font-size: 1rem;
+        letter-spacing:0.1rem;
+    }
+    }
+@media screen and (max-width: 480px){
+ 
+    h1{
+        font-size: 1.5rem;
+    }
+    #game-board {
+        grid-template-columns: repeat(4, 5rem);
+        grid-template-rows: repeat(4, 5rem);
+}
+    #moves{
+        margin: 1.2rem 0 .8rem 0;
+        font-size: 1.2rem;
+} 
+    .reset{
+        padding: 0.8rem 1rem;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        letter-spacing:0.1rem;
+}
+}

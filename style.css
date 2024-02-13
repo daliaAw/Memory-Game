@@ -18,11 +18,11 @@ h1{
     margin-top: 3rem;
     text-transform: uppercase;
 }
-#moves{
+#lives{
     margin: 2rem 0 1rem 0;
     font-size: 25px;
 }
-#moves span{
+#lives span{
     font-weight: bold;
     font-size: larger;
 }

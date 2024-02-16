@@ -11,7 +11,7 @@ Files:
 Game Pictures: 
 Game Start Screen: This screenshot displays the initial state of the memory game when it starts. The game board is populated with facedown cards, ready for the player to begin.
  
-
+![1](https://github.com/daliaAw/Memory-Game/assets/64714676/c4be1c7d-e475-437f-bac9-721a6b09d6f3)
 
 
 
